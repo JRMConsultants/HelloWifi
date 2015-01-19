@@ -6,14 +6,17 @@
 //  Copyright (c) 2015 Donald Burr. All rights reserved.
 //
 
+// The app delegate is called by the OS as soon as your app launches, and is called throughout your app's lifecycle.
+
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // A reference to the device's main window (i.e. the screen)
     var window: UIWindow?
 
-
+    // This function is called as soon as your application has finished launching.
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         return true

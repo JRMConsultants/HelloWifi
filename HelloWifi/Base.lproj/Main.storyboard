@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="HelloWifi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +16,43 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkQ-aG-Tua">
+                                <rect key="frame" x="285" y="28" width="30" height="30"/>
+                                <state key="normal" title="Test">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="testOutputBox:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="PIk-Tj-YhS"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCN-Cj-bHX">
+                                <rect key="frame" x="16" y="56" width="568" height="524"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="0KO-qN-v0m"/>
+                                </connections>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gCN-Cj-bHX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="9FJ-ET-aXu"/>
+                            <constraint firstAttribute="bottom" secondItem="gCN-Cj-bHX" secondAttribute="bottom" constant="20" symbolic="YES" id="D6E-14-X4n"/>
+                            <constraint firstItem="hkQ-aG-Tua" firstAttribute="centerX" secondItem="gCN-Cj-bHX" secondAttribute="centerX" id="Hac-Iu-Nil"/>
+                            <constraint firstItem="gCN-Cj-bHX" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="JVU-LI-2KU"/>
+                            <constraint firstItem="hkQ-aG-Tua" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="O6n-A1-YHd"/>
+                            <constraint firstItem="gCN-Cj-bHX" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="36" id="qum-Ma-749"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="outputBox" destination="gCN-Cj-bHX" id="Q8E-Nj-gTg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="397" y="379"/>
         </scene>
     </scenes>
 </document>
