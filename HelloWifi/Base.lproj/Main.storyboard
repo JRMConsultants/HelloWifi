@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -17,15 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkQ-aG-Tua">
-                                <rect key="frame" x="285" y="28" width="30" height="30"/>
-                                <state key="normal" title="Test">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="testOutputBox:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="PIk-Tj-YhS"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCN-Cj-bHX">
                                 <rect key="frame" x="16" y="56" width="568" height="524"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -35,18 +26,39 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="0KO-qN-v0m"/>
                                 </connections>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VxV-9l-toA">
+                                <rect key="frame" x="16" y="28" width="87" height="30"/>
+                                <state key="normal" title="Auto Update">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleAutoUpdate:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2Pb-mG-duj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkQ-aG-Tua">
+                                <rect key="frame" x="479" y="28" width="105" height="30"/>
+                                <state key="normal" title="Manual Update">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="initiateManualUpdate:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="CHj-Ag-aIk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gCN-Cj-bHX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="9FJ-ET-aXu"/>
-                            <constraint firstAttribute="bottom" secondItem="gCN-Cj-bHX" secondAttribute="bottom" constant="20" symbolic="YES" id="D6E-14-X4n"/>
-                            <constraint firstItem="hkQ-aG-Tua" firstAttribute="centerX" secondItem="gCN-Cj-bHX" secondAttribute="centerX" id="Hac-Iu-Nil"/>
-                            <constraint firstItem="gCN-Cj-bHX" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="JVU-LI-2KU"/>
-                            <constraint firstItem="hkQ-aG-Tua" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="O6n-A1-YHd"/>
-                            <constraint firstItem="gCN-Cj-bHX" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="36" id="qum-Ma-749"/>
+                            <constraint firstItem="gCN-Cj-bHX" firstAttribute="leading" secondItem="VxV-9l-toA" secondAttribute="leading" id="9Tx-iL-Oi8"/>
+                            <constraint firstAttribute="bottom" secondItem="gCN-Cj-bHX" secondAttribute="bottom" constant="20" symbolic="YES" id="URM-t3-dq9"/>
+                            <constraint firstItem="VxV-9l-toA" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="VE8-mC-MPR"/>
+                            <constraint firstItem="VxV-9l-toA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="crQ-jC-Fql"/>
+                            <constraint firstItem="hkQ-aG-Tua" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="g6P-fP-YLa"/>
+                            <constraint firstItem="gCN-Cj-bHX" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="36" id="lQT-Yk-jTe"/>
+                            <constraint firstItem="hkQ-aG-Tua" firstAttribute="trailing" secondItem="gCN-Cj-bHX" secondAttribute="trailing" id="pO9-EZ-Vfk"/>
+                            <constraint firstItem="VxV-9l-toA" firstAttribute="baseline" secondItem="hkQ-aG-Tua" secondAttribute="baseline" id="pTQ-Yz-pW2"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="autoUpdateButton" destination="VxV-9l-toA" id="b3b-G0-3Gv"/>
                         <outlet property="outputBox" destination="gCN-Cj-bHX" id="Q8E-Nj-gTg"/>
                     </connections>
                 </viewController>

@@ -13,6 +13,7 @@
 		EA8F25531A6B295300480F59 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA8F25521A6B295300480F59 /* Images.xcassets */; };
 		EA8F25561A6B295300480F59 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA8F25541A6B295300480F59 /* LaunchScreen.xib */; };
 		EA8F25621A6B295400480F59 /* HelloWifiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F25611A6B295400480F59 /* HelloWifiTests.swift */; };
+		EAB0A3791A7C846C00915B87 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB0A3781A7C846C00915B87 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		EA8F255B1A6B295400480F59 /* HelloWifiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloWifiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA8F25601A6B295400480F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA8F25611A6B295400480F59 /* HelloWifiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWifiTests.swift; sourceTree = "<group>"; };
+		EAB0A3781A7C846C00915B87 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				EA8F254B1A6B295300480F59 /* AppDelegate.swift */,
 				EA8F254D1A6B295300480F59 /* ViewController.swift */,
+				EAB0A3781A7C846C00915B87 /* SwiftyJSON.swift */,
 				EA8F254F1A6B295300480F59 /* Main.storyboard */,
 				EA8F25521A6B295300480F59 /* Images.xcassets */,
 				EA8F25541A6B295300480F59 /* LaunchScreen.xib */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAB0A3791A7C846C00915B87 /* SwiftyJSON.swift in Sources */,
 				EA8F254E1A6B295300480F59 /* ViewController.swift in Sources */,
 				EA8F254C1A6B295300480F59 /* AppDelegate.swift in Sources */,
 			);
@@ -405,6 +409,7 @@
 				EA8F25671A6B295400480F59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA8F25681A6B295400480F59 /* Build configuration list for PBXNativeTarget "HelloWifiTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +418,7 @@
 				EA8F256A1A6B295400480F59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
