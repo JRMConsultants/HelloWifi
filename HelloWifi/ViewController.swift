@@ -28,10 +28,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     // Create a timer that periodically calls a function
     var timer = NSTimer()
     
-    // Flag to indicate whether we are running or not
+    // Flag to indicate whether automatic updates are enabled
     var autoUpdateEnabled = false
     
-    // This function is called automatically when the view loads (i.e. when first comes on screen)
+    // This function is called automatically when the view loads (i.e. when it first comes on screen)
     // Use this to perform some initial set up tasks (e.g. connect to databases, make network connections, etc.)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,6 +104,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         // The completion handler is called by the system when the URL fetch has finished (either successfully or
         // with an error) and is specified as a clojure (an inline block of code)
         let task = session.dataTaskWithURL(url, completionHandler: {data, response, error -> Void in
+            
+            // ***********************************************
+            // Start of completion handler (inline code block)
+            // ***********************************************
+            
+            // This code block gets three pieces of data passed in:
+            // * data = the data received from the web service
+            // * response = metadata associated with the data that was received (file type and size, HTTP error code such as 404 Not Found, etc.)
+            // * error = if an error occurred while executing the request, an NSError object is passed to us that describes the error (otherwise it is set to nil)
+            
             // "error" will be set if the URL download failed for whatever reason (no network connection, connection
             // dropped, etc.)  It is nil if the connection was successful.
             if error != nil {
@@ -184,6 +194,11 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             self.log("Relative Humidity: \(relativeHumidity!)")
             
             self.log("*** END OF REPORT***")
+            
+            // *********************************************
+            // End of completion handler (inline code block)
+            // *********************************************
+
         })
         
         // NSURLSession tasks don't automatically start, we must explicitly start them by calling their resume() method.
@@ -192,7 +207,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     // Helper function that adds a date/time stamped message to the log window
     func log(message: String) {
+        // UI updates must be handled on the main thread
+        // Since we can't be sure of which thread this method is called from, we explicitly cause the code to be run
+        // on the main thread (that is what the dispatch_async() call is for)
         dispatch_async(dispatch_get_main_queue(),{
+            // everything within this code block will be executed on the main thread
+            
             // Get the current date and time as a string in short format (i.e. "1/19/15 11:41 AM")
             let date = NSDate()
             let formatter = NSDateFormatter()
@@ -200,10 +220,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             formatter.timeStyle = .ShortStyle
             let dateString = formatter.stringFromDate(date)
             
-            // add message to log window
+            // add message to log window, preceded by the date/time stamp
             self.outputBox.text = self.outputBox.text + "[\(dateString)] \(message)\n"
             
-            // scroll the output box to the bottom
+            // automatically scroll the output box to the bottom
             self.outputBox.scrollRangeToVisible(NSMakeRange(countElements(self.outputBox.text), 0))
         });
     }
