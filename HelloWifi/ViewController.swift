@@ -186,7 +186,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             }
 
             // Log it out to the screen
-            self.log("Weather report for \(cityName!) (\(stationId!)), \(obsTime!):")
+            self.log("Weather report for \(cityName!) (station \(stationId!)), \(obsTime!):")
             self.log("Conditions: \(weather!)")
             self.log("Temperature: \(temperature!)°F (feels like \(tempFeelsLike!)°F)")
             self.log("Winds: \(windString!)")
