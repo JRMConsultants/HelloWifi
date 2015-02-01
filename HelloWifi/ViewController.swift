@@ -94,7 +94,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         // Use the Weather Underground API to fetch weather data for the desired Zip code
         // Here we are constructing the URL to send to Weather Underground, it must be constructed to a specific format
         // as dictated by the API documentation: http://www.wunderground.com/weather/api/d/docs?d=data/conditions
-        let urlPath = "http://api.wunderground.com/api/\(apiKey)/conditions/q/CA/\(zipCode).json"
+        let urlPath = "http://api.wunderground.com/api/\(apiKey)/conditions/q/\(zipCode).json"
         // Create an NSURL object based on the above string, this is what the system normally uses when dealing with URLs
         let url: NSURL = NSURL(string: urlPath)!
         // Create an NSURLSession, this object handles all the tasks of managing Internet communications (downloading data,
