@@ -68,8 +68,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             // Set up an NSTimer, this will fire off every 5 minutes and call our update function
             // Time interval is in seconds, so multiply 60 * 5 to get 5 minutes = 300 seconds
             timer = NSTimer.scheduledTimerWithTimeInterval(60*5, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
-            // the timer does not start immediately, so manually run our first update
-            update()
+            // the timer does not start immediately, so manually fire it off
+            timer.fire()
         }
         
         // update the button text
